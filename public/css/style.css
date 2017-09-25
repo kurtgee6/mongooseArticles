@@ -1,0 +1,57 @@
+body {
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logoImage {
+    width: 90px;
+    height: 67px;
+    transition: 0.8s ease-out;
+}
+
+#logoImage:hover {
+    transition: 0.8s ease;
+    width: 80px;
+    height: 57px;
+    margin-left: 50px;
+    opacity: 0.6;
+}
+
+.brand-logo {
+    font-family: 'Indie Flower', cursive;
+}
+
+.nav-wrapper {
+    border-bottom: 2px dashed #d4c675;
+    background-color: #ab4747;
+}
+
+.rules {
+    margin-top: 30px;
+    border: 1px solid #d4c675;
+    height: 230px;
+    background-color: #ab4747;
+    border-radius: 20px;
+    margin-left: 5px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+}
+
+p {
+    margin-top: 45px;
+    line-height: 35px;
+    text-shadow: 1px 1px #3c3c45;
+}
+
+#button {
+    background-color: #ab4747;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+    width: 40%;
+    height: 60px;
+    line-height: 70px;
+    border-radius: 20px;
+    border: 2px dashed #d4c675;
+}

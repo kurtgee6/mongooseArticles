@@ -2,7 +2,11 @@
 $("#button").click(function () {
     $("#button").fadeOut("slow");
     $("#instructions").fadeOut("slow");
-    $("#articles").fadeIn("slow");
+
+    $.getJSON("/articles", function (data) {
+        console.log(data);
+    });
+
 });
 
 //articles div are hidden so the instructions and button are brought back again

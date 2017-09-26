@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/week18day3mongoose");
+mongoose.connect("mongodb://localhost/sportsArticles");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -41,27 +41,42 @@ db.once("open", function () {
     console.log("Mongoose connection successful.");
 });
 
+//scraping articles from the New York Times sport section
+app.get("/articles", function (req, res) {
 
-// A GET request to scrape the echojs website
-//app.get("/scrape", function (req, res) {
-//
-//});
-//
-//// This will get the articles we scraped from the mongoDB
-//app.get("/articles", function (req, res) {
-//
-//});
-//
-//// Grab an article by it's ObjectId
-//app.get("/articles/:id", function (req, res) {
-//
-//});
-//
-//
-//// Create a new note or replace an existing note
-//app.post("/articles/:id", function (req, res) {
-//
-//});
+    var url = "https://www.nytimes.com/section/sports";
+
+    request(url, function (err, res, html) {
+
+        var $ = cheerio.load(html);
+
+
+        //$(".headline .summary .byline").each(function (title, summary, author) {
+        $("div.story-meta").each(function (i, el) {
+
+            var title = $(el).find('h2.headline').text();
+            var summary = $(el).find('p.summary').text();
+            var author = $(el).find('p.byline').text();
+
+
+            var article = []
+
+            article.push({
+                headline: title,
+                summary: summary,
+                author: author
+            });
+
+            console.log(article)
+
+        })
+
+    })
+
+    res.send("You've scraped the items");
+
+
+});
 
 
 // Listen on port 8000

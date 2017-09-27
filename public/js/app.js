@@ -7,7 +7,7 @@ $("#button").click(function () {
     $.getJSON("/articles", function (data) {
 
         if (typeof data !== 'undefined' && data.length === 0) {
-            $("#articles").append("<h1>" + "Sorry, failed to grab data. Please go back and try again. Please click the running man" + "</h1>")
+            $("#articles").append("<h1>" + "Sorry, failed to grab data. Please click the running man and try again." + "</h1>")
         } else {
 
             Materialize.toast('To grab more articles, press on the running Man! ', 3000)
@@ -16,9 +16,13 @@ $("#button").click(function () {
                 $('h1').empty();
 
                 // Display the information on the page
-                $("#articles").append("<p data-id='" + data[i].headline + "'>" + data[i].summary + "<br />" + data[i].author + "</p>");
+                $("#articles").append(
+                    "<div class=stories>" +
+                    "<h2 id=headline>Headline " + "<br>" + "<br>" + data[i].headline + "</h2>" +
+                    "<p id=summaries>" + data[i].summary + "</p>" +
+                    "<p>" + data[i].author + "</p>" +
+                    "</div>");
             }
-
         }
     });
 

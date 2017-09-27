@@ -1,7 +1,10 @@
 body {
-    background: url("../images/background.jpg");
-    background-repeat: no-repeat;
+    background: url("../images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+
 }
 
 #logoImage {
@@ -19,39 +22,72 @@ body {
 }
 
 .brand-logo {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Lora', serif;
 }
 
 .nav-wrapper {
-    border-bottom: 2px dashed #d4c675;
-    background-color: #ab4747;
+    border-bottom: 1px solid black;
+    background-color: whitesmoke;
 }
 
 .rules {
     margin-top: 30px;
-    border: 1px solid #d4c675;
+    border: 1px solid #3c3c45;
     height: 230px;
-    background-color: #ab4747;
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
     margin-left: 5px;
-    color: white;
-    font-size: 30px;
-    font-family: 'Indie Flower', cursive;
+    color: black;
+    font-size: 20px;
+    font-family: 'Lora', serif;
 }
 
 p {
-    margin-top: 45px;
     line-height: 35px;
-    text-shadow: 1px 1px #3c3c45;
+    text-shadow: 1px 1px whitesmoke;
 }
 
 #button {
-    background-color: #ab4747;
-    font-family: 'Indie Flower', cursive;
-    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Lora', serif;
+    font-size: 20px;
     width: 40%;
     height: 60px;
-    line-height: 70px;
-    border-radius: 20px;
-    border: 2px dashed #d4c675;
+    line-height: 65px;
+    border: 2px solid #3c3c45;
+    color: black;
+}
+
+/*style of stories*/
+
+h2 {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+
+}
+
+.stories {
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid #3c3c45;
+    padding: 20px;
+    margin: 30px;
+    font-family: 'Lora', serif;
+    border-radius: 4px;
+
+
+}
+
+
+#summaries {
+    background-color: rgba(60, 60, 69, 0.9);
+    color: white;
+    font-size: 20px;
+    text-shadow: none;
+    width: 40%;
+    margin-left: 30%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+
 }

@@ -45,7 +45,7 @@ db.once("open", function () {
     console.log("Mongoose connection successful.");
 });
 
-//scraping articles from the New York Times sport section
+//scraping articles from the New York Times sport section and saving to database
 app.get("/articles", function (req, res) {
 
     var url = "https://www.nytimes.com/section/sports";
@@ -58,18 +58,12 @@ app.get("/articles", function (req, res) {
         //$(".headline .summary .byline").each(function (title, summary, author) {
         $("div.story-meta").each(function (i, element) {
 
-            var title = $(element).find('h2.headline').text();
-            var summary = $(element).find('p.summary').text();
-            var author = $(element).find('p.byline').text();
+            var articles = {}
 
+            articles.headline = $(element).find('h2.headline').text();
+            articles.summary = $(element).find('p.summary').text();
+            articles.author = $(element).find('p.byline').text();
 
-            var articles = []
-
-            articles.push({
-                headline: title,
-                summary: summary,
-                author: author
-            });
 
             var entry = new Article(articles);
 

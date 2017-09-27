@@ -82,15 +82,16 @@ app.get("/articles", function (req, res) {
 
     })
 
-    Article.findOne({})
-        .exec(function (error, doc) {
-            if (error) {
-                console.log(error);
-            } else {
-                res.json(doc);
-            }
-        });
-
+    Article.find({}, function (error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
 
 
 });

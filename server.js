@@ -82,7 +82,15 @@ app.get("/articles", function (req, res) {
 
     })
 
-    res.send("You've scraped the items");
+    Article.findOne({})
+        .exec(function (error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
+
 
 
 });

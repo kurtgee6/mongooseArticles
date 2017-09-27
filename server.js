@@ -11,6 +11,10 @@ var mongoose = require("mongoose");
 var request = require("request");
 var cheerio = require("cheerio");
 
+//connecting the Article schema
+var Article = require("./models/articles.js");
+
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -59,16 +63,27 @@ app.get("/articles", function (req, res) {
             var author = $(element).find('p.byline').text();
 
 
-            var article = []
+            var articles = []
 
-            article.push({
+            articles.push({
                 headline: title,
                 summary: summary,
                 author: author
             });
 
-            console.log(article)
+            var entry = new Article(articles);
 
+            // save entry to the db
+            entry.save(function (err, doc) {
+                // Log  errors
+                if (err) {
+                    console.log(err);
+                }
+                // Or log doc
+                else {
+                    console.log(doc);
+                }
+            });
         })
 
     })

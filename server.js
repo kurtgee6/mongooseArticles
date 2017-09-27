@@ -52,11 +52,11 @@ app.get("/articles", function (req, res) {
 
 
         //$(".headline .summary .byline").each(function (title, summary, author) {
-        $("div.story-meta").each(function (i, el) {
+        $("div.story-meta").each(function (i, element) {
 
-            var title = $(el).find('h2.headline').text();
-            var summary = $(el).find('p.summary').text();
-            var author = $(el).find('p.byline').text();
+            var title = $(element).find('h2.headline').text();
+            var summary = $(element).find('p.summary').text();
+            var author = $(element).find('p.byline').text();
 
 
             var article = []

@@ -21,14 +21,26 @@ $("#button").click(function () {
                     "<div class=stories>" +
                     "<h2 id=headline>Headline " + "<br>" + "<br>" + data[i].headline + "</h2>" +
                     "<p id=summaries>" + data[i].summary + "</p>" +
-                    "<p>" + data[i].author + "</p>" + "<div>" + "<button id=remove>Remove" + "</button>" +
-                    "<button id=comment>Comment" + "</button>" + "</div>" +
+                    "<p>" + data[i].author + "</p>" + "<div>" + "<button class=remove>Remove" + "</button>" +
+                    "<button class=comment>Comment" + "</button>" + "</div>" +
                     "</div>");
             }
         }
     });
 
 });
+
+//removing a certain article
+$("#articles").on("click", "button.remove", function () {
+    console.log("remove");
+});
+
+
+//adding comments to a certain article
+$("#articles").on("click", "button.comment", function () {
+    console.log("comment");
+});
+
 
 //articles div are hidden so the instructions and button are brought back again
 $("#logoImage").click(function () {

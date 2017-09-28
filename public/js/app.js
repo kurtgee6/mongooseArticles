@@ -21,7 +21,8 @@ $("#button").click(function () {
                     "<div class=stories>" +
                     "<h2 id=headline>Headline " + "<br>" + "<br>" + data[i].headline + "</h2>" +
                     "<p id=summaries>" + data[i].summary + "</p>" +
-                    "<p>" + data[i].author + "</p>" +
+                    "<p>" + data[i].author + "</p>" + "<div>" + "<button id=remove>Remove" + "</button>" +
+                    "<button id=comment>Comment" + "</button>" + "</div>" +
                     "</div>");
             }
         }

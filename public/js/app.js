@@ -7,12 +7,13 @@ $("#button").click(function () {
     $.getJSON("/articles", function (data) {
 
         if (typeof data !== 'undefined' && data.length === 0) {
-            $("#articles").append("<h1>" + "Sorry, failed to grab data. Please click the running man and try again." + "</h1>")
+            $("#articles").append("<div id=failed>" + "<h1>" + "Sorry, failed to grab the articles. Please click the running man and try again." + "</h1>" + "</div>")
         } else {
 
-            Materialize.toast('To grab more articles, press on the running Man! ', 3000)
+            Materialize.toast('To grab more articles, press on the running Man! ', 4000)
 
             for (var i = 0; i < data.length; i++) {
+                $('#failed').remove();
                 $('h1').empty();
 
                 // Display the information on the page

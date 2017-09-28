@@ -91,3 +91,16 @@ h2 {
     border-radius: 8px;
 
 }
+
+
+#failed {
+    background-color: rgba(60, 60, 69, 0.9);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 25px;
+}

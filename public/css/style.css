@@ -104,3 +104,21 @@ h2 {
 h1 {
     font-size: 25px;
 }
+
+
+.savedAppArt {
+    height: 60px;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    line-height: 20px;
+    padding: 5px;
+    color: rgb(60, 60, 69);
+    background-color: whitesmoke;
+}
+
+.savedAppArt:hover{
+    color: red;    
+}
+
+
+

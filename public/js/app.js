@@ -56,9 +56,9 @@ var thisId = $(this).attr("data-id");
   }).done(function(data) {
       console.log(data);
       
-      $('.appNewArt').empty();
+      $('.appNewArt').remove();
 
-      $(".nav-wrapper").append("<div class=appNewArt>" + "<button " + "style=float:" + "right; " + "  >New Articles!"  + "</button>" + "</div>");
+      $(".nav-wrapper").append("<div class=appNewArt>" + "<button class=savedAppArt " + "style=float:" + "right; " + "  >Saved Articles!"  + "</button>" + "</div>");
     
     });
     

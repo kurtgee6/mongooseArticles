@@ -26,6 +26,7 @@ $("#button").click(function () {
                     "<button class=savedArticle data-id='" + data[i]._id + "'>Save Article" + "</button>" + 
                     "</div>" +
                     "</div>");
+                
             }
         }
     });
@@ -54,6 +55,10 @@ var thisId = $(this).attr("data-id");
     url: "/articles/" + thisId
   }).done(function(data) {
       console.log(data);
+      
+      $('.appNewArt').empty();
+
+      $(".nav-wrapper").append("<div class=appNewArt>" + "<button " + "style=float:" + "right; " + "  >New Articles!"  + "</button>" + "</div>");
     
     });
     

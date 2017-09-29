@@ -2,6 +2,7 @@
 $("#button").click(function () {
     $("#button").fadeOut("slow");
     $("#instructions").fadeOut("slow");
+    $("#savedArticles").empty();
     $("#articles").fadeIn("slow");
 
     $.getJSON("/articles", function (data) {
@@ -60,6 +61,19 @@ var thisId = $(this).attr("data-id");
 
       $(".nav-wrapper").append("<div class=appNewArt>" + "<button class=savedAppArt " + "style=float:" + "right; " + "  >Saved Articles!"  + "</button>" + "</div>");
     
+      $("#articles").fadeOut("slow");
+      $("#savedArticles").fadeIn("slow");
+      
+        // Display the information on the page
+       $("#savedArticles").append(
+            "<div class=stories>" +
+            "<h2 id=headline>Headline " + "<br>" + "<br>" + data.headline + "</h2>" +
+            "<p id=summaries>" + data.summary + "</p>" +
+            "<p>" + data.author + "</p>" + 
+            "<div>" );
+                
+    
+      
     });
     
     Materialize.toast('You saved an article!', 3000)

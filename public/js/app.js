@@ -22,7 +22,9 @@ $("#button").click(function () {
                     "<h2 id=headline>Headline " + "<br>" + "<br>" + data[i].headline + "</h2>" +
                     "<p id=summaries>" + data[i].summary + "</p>" +
                     "<p>" + data[i].author + "</p>" + "<div>" + "<button class=remove>Remove" + "</button>" +
-                    "<button class=comment>Comment" + "</button>" + "</div>" +
+                    "<button class=comment>Comment" + "</button>" + 
+                    "<button class=savedArticle data-id='" + data[i]._id + "'>Save Article" + "</button>" + 
+                    "</div>" +
                     "</div>");
             }
         }
@@ -39,6 +41,23 @@ $("#articles").on("click", "button.remove", function () {
 //adding comments to a certain article
 $("#articles").on("click", "button.comment", function () {
     console.log("comment");
+});
+
+
+//saving articles
+$("#articles").on("click", "button.savedArticle", function () {
+    
+var thisId = $(this).attr("data-id");
+
+  $.ajax({
+    method: "GET",
+    url: "/articles/" + thisId
+  }).done(function(data) {
+      console.log(data);
+    
+    });
+    
+    Materialize.toast('You saved an article!', 3000)
 });
 
 
